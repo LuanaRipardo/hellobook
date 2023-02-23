@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Providers;
-
+use App\Services\Firestore;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
+use App\Http\Controllers\ReaderController;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,8 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(Firestore::class, function ($app) {
+            return new Firestore;
+        });
     }
+
+
 
     /**
      * Bootstrap any application services.
@@ -23,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        DB::listen(function($query) {
+            var_dump($query->sql, $query->bindings);
+        });
     }
 }

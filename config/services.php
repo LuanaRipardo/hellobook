@@ -31,4 +31,15 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firestore' => [
+        'project_id' => env('GOOGLE_CLOUD_PROJECT_ID', ''),
+    ],
+
+    'firebase' => [
+        'service_account_credentials' => base_path(env('FIREBASE_CREDENTIALS_JSON', '')),
+    ],
+
+
+
+
 ];

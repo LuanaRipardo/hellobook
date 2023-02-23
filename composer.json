@@ -6,17 +6,21 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "google/cloud-firestore": "^1.27",
+        "doctrine/dbal": "^3.5",
+        "google/cloud-firestore": "*",
         "grpc/grpc": "^1.38",
         "guzzlehttp/guzzle": "^7.2",
+        "kreait/firebase-php": "^7.0",
         "kreait/laravel-firebase": "^5.0",
         "laravel/framework": "^9.19",
+        "laravel/passport": "^11.5",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "pestphp/pest": "^1.16",
         "pestphp/pest-plugin-laravel": "^1.1",
         "predis/predis": "^2.1",
-        "ramsey/uuid": "^4.7"
+        "ramsey/uuid": "^4.7",
+        "tymon/jwt-auth": "^1.0@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -68,6 +72,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
